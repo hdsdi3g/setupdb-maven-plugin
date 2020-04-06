@@ -1,0 +1,10 @@
+# ONLY FOR TEST PURPOSE
+spring:
+    nope0:
+        nope2: nope3
+    datasource:
+        url: jdbc:mysql://localhost:3306/databaseY
+        username: usrnmY
+        password: "passwdY"
+    nope1:
+        nope2: nope3
