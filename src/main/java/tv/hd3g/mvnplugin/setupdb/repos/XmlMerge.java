@@ -1,5 +1,7 @@
 package tv.hd3g.mvnplugin.setupdb.repos;
 
+import static javax.xml.XMLConstants.ACCESS_EXTERNAL_DTD;
+import static javax.xml.XMLConstants.ACCESS_EXTERNAL_STYLESHEET;
 import static org.w3c.dom.Node.ELEMENT_NODE;
 
 import java.io.File;
@@ -78,7 +80,9 @@ public class XmlMerge {
 			final var domSource = new DOMSource(documentTarget);
 			final var stringwriter = new StringWriter();
 			final var streamresult = new StreamResult(stringwriter);
-			final var tf = TransformerFactory.newInstance();
+			final var tf = TransformerFactory.newInstance();// NOSONAR
+			tf.setAttribute(ACCESS_EXTERNAL_DTD, "");
+			tf.setAttribute(ACCESS_EXTERNAL_STYLESHEET, "");
 			final var transformer = tf.newTransformer();
 			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
 			transformer.transform(domSource, streamresult);
