@@ -47,6 +47,7 @@ public class LiquibaseActions {
 		xmlConfiguration.addChild(dbConf.getDriverElement().toDom());
 		xmlConfiguration.addChild(dbConf.getUsernameElement().toDom());
 		xmlConfiguration.addChild(dbConf.getPasswordElement().toDom());
+		xmlConfiguration.addChild(element("promptOnNonLocalDatabase", "false").toDom());
 
 		executeMojo(
 		        plugin(
