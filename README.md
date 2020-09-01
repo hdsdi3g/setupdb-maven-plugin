@@ -86,3 +86,6 @@ In another hand, you can inject values for this variables and/or mix with file c
 ![Java CI with Maven](https://github.com/hdsdi3g/setupdb-maven-plugin/workflows/Java%20CI%20with%20Maven/badge.svg)
 
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=hdsdi3g_setupdb-maven-plugin&metric=alert_status)](https://sonarcloud.io/dashboard?id=hdsdi3g_setupdb-maven-plugin)
+
+![CodeQL](https://github.com/hdsdi3g/setupdb-maven-plugin/workflows/CodeQL/badge.svg)
+
