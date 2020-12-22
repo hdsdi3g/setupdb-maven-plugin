@@ -97,12 +97,6 @@
 		<dependency>
 			<groupId>tv.hd3g.commons</groupId>
 			<artifactId>codepolicyvalidation</artifactId>
-			<version>0.0.1</version>
-			<scope>test</scope>
-		</dependency>
-		<dependency>
-			<groupId>tv.hd3g.commons</groupId>
-			<artifactId>codepolicyvalidation</artifactId>
 			<version>0.4.0</version>
 			<scope>test</scope>
 		</dependency>
