@@ -170,7 +170,7 @@ public class XmlMerge {
 			throw new IllegalAccessError("Can't found included relative file "
 			                             + element.getAttribute("file") + " from " + parentChangelog);
 		}
-		return Optional.of(relativeIncludedfile);
+		return Optional.ofNullable(relativeIncludedfile);
 	}
 
 	private static Document openXmlFile(final File changelog) {
