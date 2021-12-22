@@ -3,7 +3,6 @@ package tv.hd3g.mvnplugin.setupdb.repos;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 import java.io.File;
-import java.io.IOException;
 
 import org.apache.maven.model.Scm;
 import org.apache.maven.project.MavenProject;
@@ -23,8 +22,8 @@ class ProjectSourceExternalTest {
 	File cacheRepository;
 
 	@BeforeEach
-	void init() throws IOException {
-		MockitoAnnotations.initMocks(this);
+	void init() throws Exception {
+		MockitoAnnotations.openMocks(this).close();
 		Mockito.when(project.getGroupId()).thenReturn("tv.hd3g.internaltest");
 		Mockito.when(project.getArtifactId()).thenReturn(getClass().getSimpleName().toLowerCase());
 		final var scm = Mockito.mock(Scm.class);

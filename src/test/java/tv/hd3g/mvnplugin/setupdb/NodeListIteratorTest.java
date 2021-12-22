@@ -31,8 +31,8 @@ class NodeListIteratorTest {
 	Node node;
 
 	@BeforeEach
-	void init() {
-		MockitoAnnotations.initMocks(this);
+	void init() throws Exception {
+		MockitoAnnotations.openMocks(this).close();
 		nodeListIterator = new NodeListIterator(nodeList);
 		listLen = 1 + new Random().nextInt(20);
 		Mockito.when(nodeList.getLength()).thenReturn(listLen);

@@ -11,7 +11,6 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Map;
 
-import org.apache.maven.plugin.MojoExecutionException;
 import org.apache.maven.project.MavenProject;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -35,14 +34,15 @@ class LocalRepositoryTest {
 	XmlMerge xmlMerge;
 
 	@BeforeEach
-	void init() throws MojoExecutionException {
+	void init() throws Exception {
+		MockitoAnnotations.openMocks(this).close();
+
 		System.getProperties().remove(CONF_KEY_DRIVER);
 		System.getProperties().remove(CONF_KEY_URL);
 		System.getProperties().remove(CONF_KEY_USER);
 		System.getProperties().remove(CONF_KEY_PASSWORD);
 		System.getProperties().remove(SPRING_CONFIG_LOCATION);
 
-		MockitoAnnotations.initMocks(this);
 		projectRepositoryDir = new File("");
 		localRepository = new LocalRepository(projectRepositoryDir, project, new TestLog());
 	}
